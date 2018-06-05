@@ -29,6 +29,9 @@ func getDevices() []*pluginapi.Device {
 		devs = append(devs, &pluginapi.Device{
 			ID:     d.UUID,
 			Health: pluginapi.Healthy,
+			Properties: map[string]string{
+				"Model": *d.Model,
+			},
 		})
 	}
 
